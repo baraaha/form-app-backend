@@ -1,0 +1,15 @@
+{
+    "_id": "1b68b73f-afd5-4fa4-a5e7-e15df7b34526",
+    "name": "(Global Env)",
+    "default": false,
+    "global": true,
+    "sortNum": -2,
+    "created": "2023-07-13T17:36:11.268Z",
+    "modified": "2023-07-13T17:36:11.269Z",
+    "data": [
+        {
+            "name": "URL",
+            "value": "http://localhost:8000/api"
+        }
+    ]
+}

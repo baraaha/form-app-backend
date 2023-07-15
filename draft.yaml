@@ -1,0 +1,25 @@
+models:
+  Form:
+    user_id: integer
+    title: sting
+    slug: string
+    submission_limit: integer nullable
+    allow_notifications: boolean default:false
+    published: boolean default:false
+    published_at: datetime nullable
+    expires_at: datetime nullable
+  FormElement:
+      form_id: integer
+      type: string
+      label: string
+      properties: longtext
+      order: integer
+  Submission:
+      form_id: integer
+      user_id: integer
+      data: longtext
+controllers:
+  Auth:
+    - resource: api
+  Form:
+    - resource: api
