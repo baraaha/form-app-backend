@@ -17,16 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/user', function () {
-//     return "lkdjfksd";
-// });
-
-
-
-
-// Route::apiResource('auth', App\Http\Controllers\AuthController::class);
-
-// Route::apiResource('form', App\Http\Controllers\FormController::class);
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
@@ -44,7 +34,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/form/{id}', [FormController::class, 'show']);
 
     Route::get('/submitions/{form}', [SubmissionController::class, 'index']);
-    // Route::get('/submition/{submission}', [SubmissionController::class, 'show']);
+    Route::get('/submition/{submission}', [SubmissionController::class, 'show']);
     Route::post('/submition', [SubmissionController::class, 'store']);
     Route::resource('forms', FormController::class);
 });
