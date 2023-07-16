@@ -11,9 +11,11 @@ class AuthService
 {
     public function generateAndSendOTP(string $email)
     {
+
         $otp = rand(100000, 999999);
+
         Cache::put('otp:' . $email, $otp, now()->addMinutes(3));
-        // Mail::to($email)->send(new OTPEmail($otp));
+        Mail::to($email)->send(new OTPEmail($otp));
         return $otp;
     }
 

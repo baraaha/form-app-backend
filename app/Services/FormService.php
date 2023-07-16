@@ -55,7 +55,7 @@ class FormService
             ->where('user_id', $userId)
             ->first();
 
-        if (!$submission) {
+        if ($submission) {
             return response()->json(['message' => 'You already submitted this form'], 400);
         }
         // check if form submission limit is set and if it is greater than 0

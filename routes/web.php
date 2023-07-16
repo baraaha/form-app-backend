@@ -1,6 +1,7 @@
 <?php
 
 use App\Mail\OTPEmail;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     // Mail::to('ahmed7med@gmail.com')->send(new OTPEmail(1234));
     return view('welcome');
+});
+
+Route::get('/otp', function () {
+    // Mail::to('ahmed7med@gmail.com')->send(new OTPEmail(1234));
+    $cacheOtp = Cache::get('otp:' . "ahmed7med@gmail.com");
+    return 'ddd' . $cacheOtp;
 });
