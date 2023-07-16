@@ -20,8 +20,7 @@ class FormController extends Controller
 
     public function index()
     {
-        // $userId = auth('sanctum')->user()->id;
-        $userId = 1;
+        $userId = auth('sanctum')->user()->id;
         $forms = $this->formService->getForms($userId);
         return FormResource::collection($forms);
     }
@@ -53,7 +52,7 @@ class FormController extends Controller
     // submit form
     function submition(Request $request)
     {
-
+        return $request;
         $this->formService->submition($request->all());
         return response()->json(['message' => 'submition success'], 201);
     }

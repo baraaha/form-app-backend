@@ -47,7 +47,7 @@ class Form extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function form_items()
+    public function submissions()
     {
         return $this->hasMany(Submission::class);
     }

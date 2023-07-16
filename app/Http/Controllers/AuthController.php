@@ -29,7 +29,7 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
 
-        $this->authService->generateAndSendOTP($request->email);
+        // return  $this->authService->generateAndSendOTP($request->email);
         $user = $this->authService->getUserByEmail($request->email);
         if ($user) {
             $token = $user->createToken($request->email)->plainTextToken;
@@ -39,18 +39,32 @@ class AuthController extends Controller
         }
     }
 
+    function resendOTP()
+    {
+        $email = auth('sanctum')->user()->email;
+        $otp =   $this->authService->generateAndSendOTP($email);
+        if ($otp) {
+            return response()->json(['message' => 'resend otp success'], 200);
+        } else {
+            return response()->json(['message' => 'resend otp fail'], 400);
+        }
+    }
+
 
 
     public function verifyOTP(Request $request)
     {
         $request->validate([
-            'otp' => 'required|numeric',
-            'email' => 'required|email'
+            'otp' => 'required|numeric'
         ]);
-        $check = $this->authService->checkOTP($request->email, $request->otp);
+
+
+        $user = Auth::guard('sanctum')->user();
+
+        $check = $this->authService->checkOTP($user->email, $request->otp);
         if ($check) {
-            $user = $this->authService->getUserByEmail($request->email);
-            $token = $user->createToken($request->email)->plainTextToken;
+
+            $token = $request->bearerToken();
             return response()->json(['user' => $user, "token" => $token, 'verify' => true]);
         } else {
             return response()->json(['message' => 'OTP not match'], 400);

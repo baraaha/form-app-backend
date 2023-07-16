@@ -14,11 +14,13 @@ class Submission extends Model
      *
      * @var array
      */
+
     protected $fillable = [
         'form_id',
         'user_id',
         'data',
     ];
+
 
     /**
      * The attributes that should be cast to native types.
@@ -27,11 +29,17 @@ class Submission extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'data' => 'array',
     ];
 
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        // return [1, 2, 3];
+        return $this->belongsTo(User::class);
+    }
+    public function form()
+    {
+        return $this->belongsTo(Form::class);
     }
 }

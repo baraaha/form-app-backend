@@ -16,6 +16,7 @@ class FormResource extends JsonResource
      */
     public function toArray($request): array
     {
+        $expires_at  = Arr::get($this->expires_at, 'date');
         return [
             'id' => $this->id ?? 0,
             'user' => new UserResource($this->whenLoaded('user')), // UserResource can control the exposed user data
@@ -25,7 +26,7 @@ class FormResource extends JsonResource
             'allow_notifications' => $this->allow_notifications ?? false,
             'published' => $this->published ?? false,
             'published_at' => $this->published_at ?? '',
-            'expires_at' => $this->expires_at ?? '',
+            'expires_at' => $expires_at ?? '',
             'elements' => $this->elements ?? [],
         ];
     }

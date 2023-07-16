@@ -4,13 +4,27 @@
         "colId": "history",
         "containerId": "",
         "name": "{{URL}}login",
-        "url": "{{URL}}login",
-        "method": "GET",
+        "url": "http://127.0.0.1:8000/api/login ",
+        "method": "POST",
         "sortNum": 0,
         "created": "2023-07-13T17:37:58.354Z",
-        "modified": "2023-07-13T17:37:58.354Z",
-        "headers": [],
+        "modified": "2023-07-16T11:29:27.424Z",
+        "headers": [
+            {
+                "name": "Accept",
+                "value": "application/json"
+            }
+        ],
         "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"data\": {\n    \"name_0.09763253284947715\": \"Beginner\",\n    \"name_0.534042299598953\": \"\",\n    \"name_0.44450300843668\": \"JavaScript\",\n    \"name_0.3984757523652508\": \"\",\n    \"name_0.47784840597407874\": \"Yes\"\n  },\n  \"form_id\": \"16\"\n}",
+            "form": []
+        },
+        "auth": {
+            "type": "bearer",
+            "bearer": "11|rzXun2Y8uKZwPCJd60tewyOQiBbX2Eim989yOege"
+        },
         "tests": []
     },
     {
@@ -83,6 +97,106 @@
             }
         ],
         "params": [],
+        "tests": []
+    },
+    {
+        "_id": "aff7934f-07a0-48f0-ba8f-6c35005d7e74",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://192.168.1.223:4000/api/login",
+        "url": "http://192.168.1.223:4000/api/login",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-07-16T11:29:57.308Z",
+        "modified": "2023-07-16T11:29:57.308Z",
+        "headers": [],
+        "params": [],
+        "tests": []
+    },
+    {
+        "_id": "52afe47a-e058-4928-94d3-91918c8510b2",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://127.0.0.1:8000/api/login",
+        "url": "http://127.0.0.1:8000/api/login",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-07-16T11:30:20.470Z",
+        "modified": "2023-07-16T11:30:30.572Z",
+        "headers": [
+            {
+                "name": "Accept",
+                "value": "application/json"
+            },
+            {
+                "name": "User-Agent",
+                "value": "Thunder Client (https://www.thunderclient.com)",
+                "isDisabled": true
+            }
+        ],
+        "params": [],
+        "tests": []
+    },
+    {
+        "_id": "fc246c14-244d-4f85-bbfb-af9640d0cfdb",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://127.0.0.1:8000/api/login",
+        "url": "http://127.0.0.1:8000/api/login",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-07-16T11:30:34.686Z",
+        "modified": "2023-07-16T12:09:46.194Z",
+        "headers": [
+            {
+                "name": "Accept",
+                "value": "application/json"
+            },
+            {
+                "name": "User-Agent",
+                "value": "Thunder Client (https://www.thunderclient.com)",
+                "isDisabled": true
+            }
+        ],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"email\":\"baraahalsayed@gmail.com\"\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "029c6c15-8c1c-47ac-b9e3-a4d7d2ceec46",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://192.168.43.106:8000/api/login",
+        "url": "http://192.168.43.106:8000/api/verifyOTP",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-07-16T12:11:03.693Z",
+        "modified": "2023-07-16T12:54:33.734Z",
+        "headers": [
+            {
+                "name": "Accept",
+                "value": "application/json"
+            },
+            {
+                "name": "User-Agent",
+                "value": "Thunder Client (https://www.thunderclient.com)",
+                "isDisabled": true
+            }
+        ],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"otp\":12345\n}",
+            "form": []
+        },
+        "auth": {
+            "type": "bearer",
+            "bearer": "19|vLtJZvt2jAUtnpxxIHrr5paigedkkON9o7tzRDdI"
+        },
         "tests": []
     }
 ]
