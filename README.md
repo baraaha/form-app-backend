@@ -81,5 +81,3 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 
 For any questions or inquiries, please contact [Ahmed Hmed] at [ahmed7med89@gmail.com].
-
-Please note that this is just an example, and you should update the information based on your actual project and configuration details.
