@@ -12,7 +12,7 @@ Form Builder is a web application that allows users to create customizable forms
 1. Clone the repository 
 
    ```
-   git clone this repository
+   git clone https://github.com/baraaha/form-app-backend.git
    ```
 
 2. Navigate to the backend directory:
